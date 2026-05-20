@@ -4,35 +4,35 @@ class_name NumbersUI2D
 
 enum HAlignment { LEFT, CENTER, RIGHT }
 
-@export var number : int:
+@export var number : int: ## The non-negative integer to display; rebuilds digit nodes on change
 	set(val):
 		number = max(0, val)
 		if number_resource and is_inside_tree():
 			set_number(val)
 
-@export var number_resource : NumberResource
+@export var number_resource : NumberResource ## Maps digit values to Texture2D assets; required for rendering
 
-@export var h_alignment : HAlignment = HAlignment.LEFT:
+@export var h_alignment : HAlignment = HAlignment.LEFT: ## Horizontal alignment of the digit row relative to this node's position
 	set(val):
 		centered = true;
 		h_alignment = val
 		if number_resource and is_inside_tree():
 			set_number(number)
 
-@export var spawn_offset : Vector2 = Vector2.ZERO
+@export var spawn_offset : Vector2 = Vector2.ZERO ## Initial position offset applied to newly created digit nodes (useful for pop-in effects)
 
 func _ready() -> void:
 	if number_resource:
 		set_number(number)
 
-func get_digit(number: int, position: int) -> int:
+func get_digit(number: int, position: int) -> int: ## Extracts the digit at `position` (0 = ones, 1 = tens, etc.) from `number`
 	# position: 0 = ones place, 1 = tens place, 2 = hundreds place, etc.
 	return (number / int(pow(10, position))) % 10
 
-func get_number_length(number: int) -> int:
+func get_number_length(number: int) -> int: ## Returns the number of digits in the decimal representation of `number`
 	return str(number).length();
 
-func set_number(val : int):
+func set_number(val : int): ## Rebuilds the digit node children to match `val`, creating or removing DigitNumbers as needed
 	var i : int = 0
 	var number_length = get_number_length(val)
 	var children_left = number_length - get_child_count()
