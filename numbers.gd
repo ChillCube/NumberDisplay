@@ -4,11 +4,16 @@ class_name NumbersUI2D
 
 enum HAlignment { LEFT, CENTER, RIGHT }
 
+signal number_changed(old_value: int, new_value: int) ## Emitted whenever the displayed number changes
+
 @export var number : int: ## The non-negative integer to display; rebuilds digit nodes on change
 	set(val):
+		var old = number
 		number = max(0, val)
 		if number_resource and is_inside_tree():
 			set_number(val)
+		if old != number:
+			number_changed.emit(old, number)
 
 @export var number_resource : NumberResource ## Maps digit values to Texture2D assets; required for rendering
 

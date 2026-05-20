@@ -15,6 +15,11 @@ A way to display numbers based on custom sprites on the screen in Godot
 | **h_alignment** | `HAlignment` | `HAlignment.LEFT` | Horizontal alignment of the digit row relative to this node's position |
 | **spawn_offset** | `Vector2` | `Vector2.ZERO` | Initial position offset applied to newly created digit nodes (useful for pop-in effects) |
 
+### 🔔 Signals
+| Signal | Arguments | Description |
+| :--- | :--- | :--- |
+| **number_changed** | `old_value: int`<br>`new_value: int` |  Emitted whenever the displayed number changes |
+
 ### 🛠️ Methods
 | Method | Arguments | Returns | Description |
 | :--- | :--- | :--- | :--- |
