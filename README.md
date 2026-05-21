@@ -32,6 +32,8 @@ push-all-addons
 
 
 ## Used By
-1 other ChillCube addon(s) depend on this:
+3 other ChillCube addon(s) depend on this:
 
+- [InventoryManagerGrid](https://github.com/ChillCube/InventoryManagerGrid)
+- [PlaceAbleItem2D](https://github.com/ChillCube/PlaceAbleItem2D)
 - [visualCountDown](https://github.com/ChillCube/visualCountDown)
