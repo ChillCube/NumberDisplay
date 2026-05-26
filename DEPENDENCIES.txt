@@ -1,4 +1,5 @@
 # --- Automated Dependencies (Managed by Script) ---
 
 # --- Manually Add Dependencies Here  ---
+https://github.com/ChillCube/1to9NumberDisplay
 https://github.com/ChillCube/2d_node_arranger
