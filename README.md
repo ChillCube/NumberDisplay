@@ -28,6 +28,11 @@ remove-gd-addon NumberDisplay
 push-all-addons
 ```
 
+## Dependencies
+
+- [1to9NumberDisplay](https://github.com/ChillCube/1to9NumberDisplay)
+- [2d_node_arranger](https://github.com/ChillCube/2d_node_arranger)
+
 ## Used By
 1 other ChillCube addon(s) depend on this:
 
